@@ -1,1 +1,3 @@
-console.log("Welcome to the cheese zone");
+console.log("Welcome to the frontpage"); 
+
+

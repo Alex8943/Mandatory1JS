@@ -8,7 +8,7 @@ const fs = require("fs");
 const nav = fs.readFileSync("./public/components/nav.html").toString();
 const footer = fs.readFileSync("./public/components/footer.html").toString();
 const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html").toString();
-const loops = fs.readFileSync("./public/pages/types/loops.html").toString(); 
+const packagejson = fs.readFileSync("./public/pages/types/packageJson.html").toString(); 
 const nodemon = fs.readFileSync("./public/pages/types/nodemon.html").toString(); 
 const ssr = fs.readFileSync("./public/pages/types/SSR.html").toString(); 
 const introduction = fs.readFileSync("./public/pages/types/introduction.html").toString();
@@ -17,7 +17,7 @@ const callBack = fs.readFileSync("./public/pages/types/callbackFunctions.html").
 
 //Making these objects will it make it usefull, to send a request to the client. And get a respond t 
 const frontpagePage = nav.replace("%%DOCUMENT_TITLE%%", "Welcome to all type of js. learning goals") + frontpage + footer;
-const loopPage = nav.replace("%%DOCUMENT_TITLE%%", "You are in the intro to loops") + loops + footer;
+const packageJson = nav.replace("%%DOCUMENT_TITLE%%", "You are in the intro to loops") + packagejson + footer;
 const nodemonPage = nav.replace("%%DOCUMENT_TITLE%%", "You are in the nodemon intro") + nodemon + footer;
 const ssrPage = nav.replace("%%DOCUMENT_TITLE%%", "you are in the ssr intro") + ssr + footer;
 const introductionPage = nav.replace("%%DOCUMENT_TITLE%%", "You are in the introduction file") + introduction + footer; 
@@ -33,8 +33,8 @@ app.get("/", (req, res) => {
 });
 
 //Loops page
-app.get("/loops", (req, res) => {
-    res.send(loopPage)
+app.get("/packageJson", (req, res) => {
+    res.send(packageJson)
 });
 
 app.get("/nodemon", (req, res) => {
@@ -57,5 +57,6 @@ app.get("/express", (req, res) => {
 app.get("/callback", (req, res) => {
     res.send(callbackFunctionPage)
 });
+
 //Creating a port 3000 to run the project on 
 app.listen(3000, () => console.log("Server is running on", 3000));

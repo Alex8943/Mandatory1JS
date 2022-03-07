@@ -4,6 +4,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  h1{
+    text-align: center;
+  }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -26,4 +30,12 @@ body {
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
+}
+
+.newspaper {
+  column-count: 3;
+  column-gap: 40px;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+  column-rule-color: black;
 }
